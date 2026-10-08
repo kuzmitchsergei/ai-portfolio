@@ -1,0 +1,1 @@
+print("Hello, I am Sergei and I am learning Python")
