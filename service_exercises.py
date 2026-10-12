@@ -49,7 +49,6 @@ print(subtotal, discount, net_amount, round(vat, 2), round(total_incl_vat, 2))
 
 
 
-
 # Exercise 3: Price change check
 # Write a function pct_change(old, new) that returns the price
 # change in percent: (new - old) / old * 100
@@ -59,6 +58,16 @@ print(subtotal, discount, net_amount, round(vat, 2), round(total_incl_vat, 2))
 # next to any increase above 3%.
 # Expected: 5.0 FLAG, 2.0, -4.0
 
+
+def pct_change(old, new):
+    return  (new - old) / old *100
+
+for old, new in [(1000, 1050), (200, 204), (500, 480)]:
+    change = pct_change(old, new)
+    if change > 3:
+        print(round(change, 1), 'FLAG')
+    else:
+        print(round(change, 1))
 
 # Exercise 4: Tender go/no-go
 # Ask the user for:
@@ -72,6 +81,8 @@ print(subtotal, discount, net_amount, round(vat, 2), round(total_incl_vat, 2))
 # print an error message instead of crashing.
 # Test at least 4 cases: one GO, and one for each reason
 # to say no.
+
+
 
 
 # Exercise 5: Service budget
