@@ -121,4 +121,21 @@ else:
 # A service budget is CHF 50,000.
 # Month 1 costs CHF 4,000. Each following month costs 1% more
 # than the month before.
-# Use a while loop to count how many FULL months the
+# Use a while loop to count how many FULL months the budget
+# covers. Check before each month that enough money is left;
+# never go over the budget.
+# Print in the loop the number of months, the total spent and what is left,
+# rounded to 2 decimals.
+# Expected: 11 months, 46267.34 spent, 3732.66 left
+
+budget = 50000
+monthly_cost = 4000
+months = 0
+spent = 0
+
+while spent + monthly_cost <= budget:
+    spent = spent + monthly_cost
+    months = months + 1
+    monthly_cost = monthly_cost * 1.01
+
+    print(months, round(spent, 2), round (budget-spent, 2))
