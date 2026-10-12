@@ -9,7 +9,6 @@
 #           24 Within SLA, 49 Escalate
 
 
-
 def sla_status(hours):
     if hours > 48:
         return 'Escalate'
@@ -31,6 +30,24 @@ for h in [5, 30, 52, 24, 49]:
 # Print the subtotal, discount, net amount, VAT and total,
 # rounded to 2 decimals.
 # Expected: 11000, 550.0, 10450.0, 846.45, 11296.45
+
+
+price1 = 1000
+price2 = 500
+line1 = 5 * price1
+line2 = 12 * price2
+subtotal = line1 + line2
+if subtotal > 10000:
+    discount = subtotal * 0.05
+else:
+    discount = 0
+
+net_amount = subtotal - discount
+vat = net_amount * 0.081
+total_incl_vat = net_amount + vat
+print(subtotal, discount, net_amount, round(vat, 2), round(total_incl_vat, 2))
+
+
 
 
 # Exercise 3: Price change check
