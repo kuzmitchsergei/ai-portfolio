@@ -83,6 +83,38 @@ for old, new in [(1000, 1050), (200, 204), (500, 480)]:
 # to say no.
 
 
+while True:
+    line = input('Contract value in CHF ')
+    try:
+        contract_value_chf = float(line)
+        break
+    except ValueError:
+        print('Error, Type a contract value in CHF')
+
+while True:
+    line = input('The number of days left until deadline ')
+    try:
+        number_of_days_deadline = int(line)
+        break
+    except ValueError:
+        print('Error, type number of days')
+
+while True:
+    requirements = input('All mandatory requirements are met (y/n) ') .strip().lower()
+    if requirements == 'y' or requirements == 'n':
+        break
+    print('Error, type y or n')
+
+if contract_value_chf < 150000:
+    print('NO-GO: contract value is less than 150000CHF')
+elif number_of_days_deadline < 10:
+    print('NO_GO: deadline less than 10 days')
+elif requirements == 'n':
+    print('NO-G0: requirements are not met')
+else: 
+    print('GO')
+
+
 
 
 # Exercise 5: Service budget
